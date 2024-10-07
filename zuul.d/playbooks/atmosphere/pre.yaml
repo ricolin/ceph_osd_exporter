@@ -1,0 +1,12 @@
+# Copyright (c) 2024 VEXXHOST, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+- name: Fetch Atmosphere
+  hosts: all
+  tasks:
+    - name: Git clone
+      become: true
+      ansible.builtin.git:
+        repo: 'https://github.com/vexxhost/atmosphere.git'
+        dest: /tmp/atmosphere
+        version: "{{ atmosphere_branch }}"
