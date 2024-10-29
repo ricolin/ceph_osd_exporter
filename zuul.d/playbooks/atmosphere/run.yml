@@ -23,13 +23,6 @@
       ansible.builtin.command:
         kubectl label nodes instance ceph-osd-exporter=enabled
 
-        #- name: Install ceph-osd-exporter Helm chart
-        #become: true
-        #ansible.builtin.command:
-        #helm -n monitoring install ceph-osd-exporter ./charts/ceph-osd-exporter
-        #args:
-        #chdir: "{{ zuul.project.src_dir }}"
-
     - name: Deploy Helm chart
       become: true
       run_once: true
@@ -40,3 +33,4 @@
         create_namespace: true
         kubeconfig: "{{ kubeconfig_path | default('/etc/kubernetes/admin.conf') }}"
         values: {}
+        wait: true

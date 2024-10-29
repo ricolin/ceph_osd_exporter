@@ -5,8 +5,5 @@ metadata:
   name: {{ include "ceph_osd_exporter.fullname" . }}-clusterrole
   labels:
     {{- include "ceph_osd_exporter.labels" . | nindent 4 }}
-rules:
-  - apiGroups: [""]
-    resources: ["pods"]
-    verbs: ["list"]
+rules: []
 {{- end }}

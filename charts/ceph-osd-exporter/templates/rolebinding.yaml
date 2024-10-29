@@ -1,4 +1,4 @@
-{{- if or .Values.podSecurityPolicy.enabled (not .Values.rbac.clusterscoped) }}
+{{- if not .Values.rbac.clusterscoped }}
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:

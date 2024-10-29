@@ -88,13 +88,6 @@ tolerations: []
 ##
 affinity: {}
 
-## Enable this if pod security policy enabled in your cluster
-## It will bind ServiceAccount with unrestricted podSecurityPolicy
-## Ref: https://kubernetes.io/docs/concepts/policy/pod-security-policy/
-podSecurityPolicy:
-  enabled: false
-  policyName: unrestricted-psp
-
 ## Set security context of the ceph_osd_exporter container
 ## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 containerSecurityContext:
