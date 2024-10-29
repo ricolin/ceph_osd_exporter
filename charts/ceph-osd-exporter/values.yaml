@@ -76,7 +76,7 @@ updateStrategy: {}
 ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
 ##
 nodeSelector:
-  ceph-osd-exporter: enabled
+  ceph/role: osd
 
 ## Tolerations for pod assignment
 ## Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/

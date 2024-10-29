@@ -17,11 +17,11 @@
       args:
         chdir: /tmp/atmosphere
 
-    # We can drop this part `ceph-osd-exporter=enabled` exists in all testing branches.
+    # We can drop this part once `ceph/role=osd` exists in all testing branches.
     - name: Add lable to `instance` node
       become: true
       ansible.builtin.command:
-        kubectl label nodes instance ceph-osd-exporter=enabled
+        kubectl label nodes instance ceph/role=osd
 
     - name: Deploy Helm chart
       become: true
